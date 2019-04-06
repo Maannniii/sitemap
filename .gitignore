@@ -2,3 +2,5 @@
 *.javac
 */target/
 */bin/
+*.xml
+*.json
