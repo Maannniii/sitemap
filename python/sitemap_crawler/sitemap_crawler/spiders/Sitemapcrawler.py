@@ -23,6 +23,7 @@ class SitemapcrawlerSpider(scrapy.Spider):
         urls=[x for x in map(self.clean,urls.difference(external_urls).difference({response.url,self.crawl_start_url})) if bool(x)]
         urls=[] if len(urls)==0 else [urls[0]]
         external_urls=[x for x in map(self.clean,external_urls) if bool(x)]
+        item['external_urls']=external_urls
         item['urls'] = urls
         for url in urls:
             yield response.follow(url, callback=self.parse)
