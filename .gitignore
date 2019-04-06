@@ -5,6 +5,7 @@
 *.json
 .*
 !/.gitignore
+!pom.xml
 *.class
 *.log
 org.eclipse.*
