@@ -11,4 +11,11 @@ import scrapy
 class SitemapCrawlerItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    # stores url
+    url = scrapy.Field(serializer=str)
+    # list of external Urls
+    external_urls = scrapy.Field(serializer=list)
+    # list of Static Urls
+    static_urls = scrapy.Field(serializer=list)
+    # list of available urls
+    urls = scrapy.Field(serializer=list)
