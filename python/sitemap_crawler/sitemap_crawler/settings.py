@@ -14,6 +14,12 @@ BOT_NAME = 'sitemap_crawler'
 SPIDER_MODULES = ['sitemap_crawler.spiders']
 NEWSPIDER_MODULE = 'sitemap_crawler.spiders'
 
+DB_HOST = "127.0.0.1"
+DB_PASSWORD = "4994"
+DB_NAME = "interview"
+DB_USER = "root"
+
+CRAWL_START_URL= 'https://scotch.io' # https://websiteforstudents.com' # 'https://wiprodigital.com'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'sitemap_crawler (+http://www.yourdomain.com)'
@@ -64,9 +70,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'sitemap_crawler.pipelines.SitemapCrawlerPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'sitemap_crawler.pipelines.SitemapCrawlerPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
