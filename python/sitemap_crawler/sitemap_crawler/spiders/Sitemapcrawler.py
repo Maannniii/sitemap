@@ -27,7 +27,7 @@ class SitemapcrawlerSpider(scrapy.Spider):
         external_urls = set(filter(lambda x: urlparse(x).netloc != self.url_details.netloc, urls))
         urls = [urljoin(base_url, x) for x in
                 map(self.clean, urls.difference(external_urls).difference({response.url, CRAWL_START_URL})) if bool(x)]
-        urls = [] if len(urls) == 0 else [urls[0]]
+        # urls = [] if len(urls) == 0 else [urls[0]]
         external_urls = [urljoin(base_url, x) for x in map(self.clean, external_urls) if bool(x)]
         item['external_urls'] = external_urls
         item['urls'] = urls
