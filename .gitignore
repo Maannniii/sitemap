@@ -1,6 +1,14 @@
 *.pyc
 *.javac
-*/target/
-*/bin/
+**/bin
 *.xml
 *.json
+.*
+!/.gitignore
+*.class
+*.log
+org.eclipse.*
+bin/
+*.jar
+**/target/
+.metadata/
