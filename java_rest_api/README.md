@@ -9,3 +9,8 @@ This project assumes that you already have the above mentioned prerequisites ins
 * Compile and create jar by running `mvn clean package`
 * Once done run the jar under targer directorty as `java -jar jarname.jar`. Here `java -jar rest-0.0.1.jar`
 * Open your browser and navigate to `http://localhost:8080/sitemap` to get the JSON response.
+
+
+### Available APIs:
+* **`GET /sitemap` or `/sitemap/all`**
+* **`GET /sitemap/{id}`**
