@@ -10,6 +10,7 @@ This project assumes that you already have the above mentioned prerequisites ins
 
 ### Setup
 1. Install the required python libraries by running `pip install -r requirements.txt` found under `sitemap_crawler`.
+2. Create table in MySQL database if not created already.
 2. Update the database configurations found at `sitemap_crawler/sitemap_crawler/settings.py`.
 3. Provide the domain to crawl at `sitemap_crawler/sitemap_crawler/settings.py`.
 
