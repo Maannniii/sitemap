@@ -9,14 +9,15 @@ from sitemap_crawler.settings import CRAWL_START_URL
 
 class SitemapcrawlerSpider(scrapy.Spider):
     name = 'Sitemapcrawler'
-    allowed_domains = [CRAWL_START_URL]
     start_urls = [CRAWL_START_URL]
     whitespace_pattern = r"""[\n\t\r\x0b\x0c'"]*"""
     url_details = urlparse(CRAWL_START_URL)
 
     def parse(self, response):
         item = Item()
+        log = self.logger
         base_url = self.clean(response.url.strip())
+        log.info("crawling {}".format(base_url))
         static_urls = set(response.xpath("//*/@src").getall())
         junk_urls = set(response.xpath("//script/@src").getall())
         item['static_urls'] = [urljoin(base_url, x) for x in map(self.clean, static_urls.difference(junk_urls)) if
@@ -32,6 +33,7 @@ class SitemapcrawlerSpider(scrapy.Spider):
         item['external_urls'] = external_urls
         item['urls'] = urls
         for url in urls:
+            log.info("Yielding {}".format(url))
             yield response.follow(url, callback=self.parse)
         yield item
 
