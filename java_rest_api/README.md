@@ -9,8 +9,9 @@ This project assumes that you already have the above mentioned prerequisites ins
 
 ### Running
 * Change directory to `rest`
+* Update database properties at `rest/src/main/resources/application.properties`.
 * Compile and create jar by running `mvn clean package`
-* Once done run the jar under targer directorty as `java -jar jarname.jar`. Here `java -jar rest-0.0.1.jar`
+* Once done run the jar under target directorty as `java -jar jarname.jar`. Here `java -jar rest-0.0.1.jar`
 * Open your browser and navigate to `http://localhost:8080/sitemap` to get the JSON response.
 
 
