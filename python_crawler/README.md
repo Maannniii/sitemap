@@ -16,10 +16,10 @@ This project assumes that you already have the above mentioned prerequisites ins
 ### Running
 * Change directory to `sitemap_crawler`
 * To view list of available spiders run `scrapy list`
-* To run a spider use `scrapy crawl [spider_name]`. 
+* To run a spider use `scrapy crawl [spider_name]`.  In this case `scrapy crawl sitemap`.
 * To crawl and store the data as json/xml file run `scrapy crawl [spider_name] -o filename.[json|xml|csv]`. This stores data to Database and Respective file as well.
 
-### Format:
+### Output Format:
 ```
 [
    {
