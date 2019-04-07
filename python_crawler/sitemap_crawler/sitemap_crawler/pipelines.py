@@ -14,12 +14,13 @@ class SitemapCrawlerPipeline(object):
     def __init__(self):
         self.connection = pymysql.connect(settings.DB_HOST, settings.DB_USER, settings.DB_PASSWORD, settings.DB_NAME)
         self.cursor = self.connection.cursor(pymysql.cursors.DictCursor)
+        # comment following 3 lines to stop clearing the existing data in DB
         self.cursor.execute("truncate sitemap")
         self.cursor.execute("alter table sitemap auto_increment=1")
         self.connection.commit()
 
     def process_item(self, item, spider):
-        sql = "insert into sitemap(url,external_urls,static_urls,urls) values('{}','{}','{}','{}')"
+        sql = "insert ignore into sitemap(url,external_urls,static_urls,urls) values('{}','{}','{}','{}')"
         try:
             formatted_sql = sql.format(dumps(item['url']), dumps(item['external_urls']), dumps(item['static_urls']),
                                        dumps(item['urls']))
