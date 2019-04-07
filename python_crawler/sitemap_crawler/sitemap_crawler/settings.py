@@ -14,10 +14,10 @@ BOT_NAME = 'sitemap_crawler'
 SPIDER_MODULES = ['sitemap_crawler.spiders']
 NEWSPIDER_MODULE = 'sitemap_crawler.spiders'
 
-DB_HOST = "127.0.0.1"
-DB_PASSWORD = "4994"
-DB_NAME = "interview"
-DB_USER = "root"
+DB_HOST = "0.0.0.0"
+DB_PASSWORD = "password"
+DB_NAME = "database"
+DB_USER = "user"
 
 CRAWL_START_URL = 'https://scotch.io'  # https://websiteforstudents.com' # 'https://wiprodigital.com'
 
