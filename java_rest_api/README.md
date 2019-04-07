@@ -1,3 +1,6 @@
+Spring boot project to expose crawled Sitemap Data.  
+This project reads and exposes stored data from MySQL database as JSON response.
+
 ### Prerequisites:
 1. [Java jdk 1.8+](https://www.java.com/en/download/help/download_options.xml "Java installation")
 2. [Apache maven 3+](https://maven.apache.org/install.html "Maven Installation")
