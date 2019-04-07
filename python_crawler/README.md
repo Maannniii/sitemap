@@ -16,4 +16,4 @@ This project assumes that you already have the above mentioned prerequisites ins
 * To crawl and store the data as json/xml file run `scrapy crawl [spider_name] -o filename.[json|xml]`. This stores data to Database and Respective file as well.
 
 ## Note:  
-**1. The crawler will truncate the data stored in the database each time. comment the lines 18,19,20 at `sitemap_crawler/pipelines.py` to disable it.**
+* The crawler will truncate the data stored in the database each time. comment the lines 18,19,20 at `sitemap_crawler/pipelines.py` to disable it.
