@@ -11,4 +11,16 @@ The project uses Python and Scrapy for crawing websites and Java for exposing th
 
 Install the above mentioned Prerequisites before starting the project.
 
+Once done create a table having following columns
+
+| Name | Type | Constraint |
+| ------ | ------ | ------ |
+| id | int(11) | NOT NULL, AUTO_INCREMENT, PRIMARY KEY |
+| url | varchar(1000) | NOT NULL |
+| external_urls | JSON | NOT NULL |
+| static_urls | JSON | NOT NULL |
+| urls | JSON | NOT NULL |
+
+Refer `MySQL / table.sql` for syntax.
+
 Please find **README.md** inside the project directories for more specific instructions.
