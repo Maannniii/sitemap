@@ -5,7 +5,7 @@ This project reads and exposes stored data from MySQL database as JSON response.
 1. [Java jdk 1.8+](https://www.java.com/en/download/help/download_options.xml "Java installation")
 2. [Apache maven 3+](https://maven.apache.org/install.html "Maven Installation")
 
-This project assumes that you already have the above mentioned prerequisites installed.
+This project assumes that you already have the above mentioned prerequisites installed and have ran the python crawler already.
 
 ### Running
 * Change directory to `rest`

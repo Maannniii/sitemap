@@ -6,7 +6,7 @@ The crawler crawls the data and stores in MySQL Database. JSON, XML, CSV files c
 2. [pip3](https://pip.pypa.io/en/stable/installing/ "Installing pip3")
 3. [MySQL 5.7.8+](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/ "Installing MySQL")
 
-This project assumes that you already have the above mentioned prerequisites installed.
+This project assumes that you already have the above mentioned prerequisites installed and have a table created in mysql for storing the crawled data.
 
 ### Setup
 1. Install the required python libraries by running `pip install -r requirements.txt` found under `sitemap_crawler`.
