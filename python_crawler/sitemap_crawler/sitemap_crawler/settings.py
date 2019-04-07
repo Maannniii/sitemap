@@ -14,11 +14,13 @@ BOT_NAME = 'sitemap_crawler'
 SPIDER_MODULES = ['sitemap_crawler.spiders']
 NEWSPIDER_MODULE = 'sitemap_crawler.spiders'
 
+# DATABASE Configurations
 DB_HOST = "0.0.0.0"
 DB_PASSWORD = "password"
 DB_NAME = "database"
 DB_USER = "user"
 
+# Domain to crawl
 CRAWL_START_URL = 'https://scotch.io'  # https://websiteforstudents.com' # 'https://wiprodigital.com'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -70,6 +72,7 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
+# Comment if you don't want to save into DATABASE
 ITEM_PIPELINES = {
     'sitemap_crawler.pipelines.SitemapCrawlerPipeline': 300,
 }
