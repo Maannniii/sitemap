@@ -47,7 +47,8 @@ class SitemapcrawlerSpider(scrapy.Spider):
 
     def clean(self, data):
         '''removes whitespaces and respective escape sequences. Also removes trailing / at the end'''
-        return re.sub(self.whitespace_pattern, '', data).strip().strip("/")
+        data = re.sub(self.whitespace_pattern, '', data).strip()
+        return data[:-1] if data.endswith("/") else data
 
     def remove_same_pages(self, x):
         '''returns url which removes same page urls as #idname point to same pages'''
