@@ -9,9 +9,11 @@ from sitemap_crawler.settings import CRAWL_START_URL
 
 class SitemapcrawlerSpider(scrapy.Spider):
     name = 'sitemap'
-    start_urls = [CRAWL_START_URL]
-    whitespace_pattern = r"""[\n\t\r\x0b\x0c'"]*"""
-    url_details = urlparse(CRAWL_START_URL)
+
+    def __init__(self):
+        self.start_urls = map(self.clean,[CRAWL_START_URL])
+        self.whitespace_pattern = r"""[\n\t\r\x0b\x0c'"]*"""
+        self.url_details = urlparse(CRAWL_START_URL)
 
     def parse(self, response):
         '''Crawls the url to get list of urls to next pages, urls to other sites, urls to static contents'''
@@ -44,8 +46,8 @@ class SitemapcrawlerSpider(scrapy.Spider):
         yield item
 
     def clean(self, data):
-        '''removes whitespaces and respective escape sequences.'''
-        return re.sub(self.whitespace_pattern, '', data).strip()
+        '''removes whitespaces and respective escape sequences. Also removes trailing / at the end'''
+        return re.sub(self.whitespace_pattern, '', data).strip().strip("/")
 
     def remove_same_pages(self, x):
         '''returns url which removes same page urls as #idname point to same pages'''
